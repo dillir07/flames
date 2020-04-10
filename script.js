@@ -134,12 +134,12 @@ window.onload = (event) => {
                 let flameCounter = 0;
                 let currentFlame = undefined;
                 for (let counter = 0; counter < 999; counter++) {
-                    console.log(counter, 'counter');
+//                     console.log(counter, 'counter');
                     flameIndex = (counter % this.flamesModelList.length);
                     // console.log(flameIndex);
                     currentFlame = this.flamesModelList[flameIndex];
                     if (currentFlame.disabled) {
-                        console.error(currentFlame.id, 'disabled, moving on');
+//                         console.error(currentFlame.id, 'disabled, moving on');
                         // console.log('moving on');
                     } else {
                         console.warn(currentFlame.id, 'working in progress');
@@ -147,13 +147,13 @@ window.onload = (event) => {
                         if (flameCounter === this.flamesCount) {
                             currentFlame.disabled = true;
                             // currentFlame.id = this.flameEmoji;
-                            console.info(currentFlame.id, 'matched in progress', currentFlame.disabled);
+//                             console.info(currentFlame.id, 'matched in progress', currentFlame.disabled);
                             flameCounter = 0; //reset flame counter
                         }
                         
                     }
                     if (this.flamesModelList.filter(flameModel => !flameModel.disabled).length == 1) {
-                        console.log('reached final breaking loop')
+//                         console.log('reached final breaking loop')
                         this.flamesFinalResult = this.flamesModelList.filter(flameModel => !flameModel.disabled)[0].description;
                         break;
                     }
@@ -164,6 +164,9 @@ window.onload = (event) => {
                 // console.log('yourName', this.yourName);
                 // console.log('hisHerName', this.hisHerName);
                 if (this.yourName.length <= 0 || this.hisHerName.length <= 0) {
+                    return false;
+                }
+                if (this.yourName.toUpperCase() == this.hisHerName.toUpperCase()) {
                     return false;
                 }
                 this.loadNameList(this.yourName.toUpperCase(), 0);
