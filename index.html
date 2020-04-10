@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ðŸ”¥ Flames ðŸ”¥</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background: linear-gradient(180deg, #EBEBE3, #EE7762);">
+    <!-- <note>color hexcodes are referenced from https://brandpalettes.com/</note> -->
+    <div id="app" class="w3-container">
+        <header class="w3-center w3-red w3-panel w3-xxlarge w3-round-large w3-card-2">
+            <div class="w3-center"> {{message}} </div>
+        </header>
+        <div v-if="inputMode" id="divInputForm" class="w3-container w3-center w3-padding w3-card-2 w3-round-large" style="background: linear-gradient(180deg, #E4E4E2, #FAD7BD);">
+            <br>
+            <input type="text" id="txtYourName" v-model="yourName" required="required" class="w3-input w3-border w3-border-red w3-round-large"
+                placeholder="Your Name">
+            <br>
+            <input type="text" id="txtHisHerName" v-model="hisHerName" required="required" class="w3-input w3-border w3-border-red w3-round-large"
+                placeholder="His/Her Name">
+            <br>
+            <input type="button" id="btnFlame" v-on:click="flame" role="button" value="ðŸ”¥ Flames ðŸ”¥"
+                class="w3-btn w3-red w3-round-large">
+        </div>
+        <br>
+        <div v-if="inputMode" class="w3-continer">
+            <div class="w3-container w3-card-2 w3-round-large" style="background: linear-gradient(180deg, #E4E4E2,  #E6C7C2);">
+                <div class="w3-panel">Thanks to...</div>
+                <ul class="w3-list">
+                    <li><a target="_blank" href="https://vuejs.org/">Vue JS team</a></li>
+                    <li><a target="_blank" href="https://mozilla.org">Mozilla ðŸ¦Š</a> for <a target="_blank" href="https://developer.mozilla.org/en-US/">MDN Web Docs</a> </li>
+                    <li><a target="_blank" href="https://www.w3schools.com/w3css/">W3-CSS</a> from <a target="_blank" href="https://w3schools.com">w3schools</a></li>
+                    <li><a target="_blank" href="https://emojipedia.org/">Emojipedia</a></li>
+                    <li>Wonderful Open Source community</li>
+                </ul>
+            </div>
+            <br>
+            <div class="w3-bar w3-border w3-border-red w3-padding w3-card-2 w3-round-large">
+                    <span>About me...Name is <span>Dilli ðŸ˜Ž,</span> you can reach me at ðŸ‘‰</span>
+                    <a target="_blank" href="https://twitter.com/dillir07" class="w3-btn w3-round" style="background-color: #1da1f2; color: white;">Twitter</a>
+                    <a target="_blank" href="https://github.com/dillir07" class="w3-btn w3-round" style="background-color: #24292e; color: white;">Github</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/dillir07/" class="w3-btn w3-round" style="background-color: #007bb5; color: white;">LinkedIn</a>
+                    <a target="_blank" href="https://facebook.com/dillir07" class="w3-btn w3-round" style="background-color: #3b5998; color: white;" >Facebook</a>
+                    <a target="_blank" href="https://dev.to/dillir07" class="w3-btn w3-round" style="background-color: #000000; color: white;">DEV.TO</a>
+            </div>
+        </div>
+        <div v-if="outputMode">
+            <div>
+                <div class="flex-container">
+                    <div class="flex-item w3-card-4 w3-padding-small w3-xxlarge w3-round-xlarge" v-for="letter in yourNameList" v-bind:class = 'letter.styles'>
+                        <span>{{letter.char}}</span>
+                    </div>
+                </div>
+                <div class="flex-container">
+                    <div class="flex-item w3-card-4 w3-padding-small w3-xxlarge w3-round-xlarge" v-for="letter in hisHerNameList" v-bind:class = 'letter.styles'>
+                        <span>{{letter.char}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-if = "flamesCount">
+            <header class="w3-container w3-center w3-text-red">
+                <h1><strong>{{flameEmoji}} {{flamesCount}} {{flameEmoji}}</strong></h1>
+            </header>
+        </div>
+        <div v-if = "flamesModelList">
+            <div class="flex-container">
+                <div class="flex-item w3-padding w3-card-4 w3-xxlarge w3-round-xlarge" v-for="flame in flamesModelList" v-bind:class='{dis:flame.disabled}'>
+                    <h2>{{flame.id}}</h2>
+                </div>
+            </div>
+            <header v-if="flamesFinalResult" class="w3-center w3-jumbo w3-card-4 w3-round-xlarge" style="background-color: #EBEBE3;">
+                {{flamesFinalResult}}
+            </header>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+.flex-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+
+  .flex-item {
+    /* width: 100px; */
+    margin: 10px;
+    text-align: center;
+    /* line-height: 75px; */
+    /* font-size: 30px; */
+  }
+
+  .dis {
+    background-color: #1F2020;
+    color: #F9F6EF;
+  }
