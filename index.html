@@ -23,7 +23,7 @@
             <input type="text" id="txtHisHerName" v-model="hisHerName" required="required" class="w3-input w3-border w3-border-red w3-round-large"
                 placeholder="His/Her Name">
             <br>
-            <input type="button" id="btnFlame" v-on:click="flame" role="button" value="ðŸ”¥ Flames ðŸ”¥"
+            <input type="button" id="btnFlame" v-on:click="flame" role="button" value="🔥 Flames 🔥"
                 class="w3-btn w3-red w3-round-large">
         </div>
         <br>
@@ -74,7 +74,8 @@
                 </div>
             </div>
             <header v-if="flamesFinalResult" class="w3-center w3-jumbo w3-card-4 w3-round-xlarge" style="background-color: #EBEBE3;">
-                {{flamesFinalResult}}
+                {{flamesFinalResult}} &nbsp;  <span class="w3-btn w3-round-large w3-medium w3-green" ><!-- Codes by Quackit.com -->
+                    <a href="javascript:location.reload(true)">Retry</a></span>
             </header>
         </div>
     </div>
