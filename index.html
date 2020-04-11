@@ -14,7 +14,7 @@
     <!-- <note>color hexcodes are referenced from https://brandpalettes.com/</note> -->
     <div id="app" class="w3-container">
         <header class="w3-center w3-red w3-panel w3-xxlarge w3-round-large w3-card-2">
-            <div class="w3-center"> {{message}} </div>
+            <a href="javascript:location.reload(true)" class="w3-center"> {{message}} </a>
         </header>
         <div v-if="inputMode" id="divInputForm" class="w3-container w3-center w3-padding w3-card-2 w3-round-large" style="background: linear-gradient(180deg, #E4E4E2, #FAD7BD);">
             <br>
@@ -75,11 +75,11 @@
                 </div>
             </div>
 
-            <header v-if="flamesFinalResult" class="w3-center w3-jumbo w3-card-4 w3-round-xlarge" style="background-color: #EBEBE3;">
-                {{flamesFinalResult}}</span>
+            <header v-if="flamesFinalResult" class="w3-center w3-large w3-card-4 w3-round-xlarge" style="background-color: #EBEBE3;">
+                {{flamesFinalResult}}
             <br>
             <span class="w3-btn w3-round-large w3-medium w3-green" ><!-- Codes by Quackit.com -->
-                    <a href="javascript:location.reload(true)">Retry</a>
+                    <a href="javascript:location.reload(true)">Retry</a></span>
             </header>
         </div>
     </div>
