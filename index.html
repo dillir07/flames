@@ -2,12 +2,60 @@
 <html>
 
 <head>
-    <title>🔥 Flames 🔥</title>
+    <title>Flames 🔥</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="vue.js"></script>
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="style.css">
-    <meta name="theme-color" content="#DC381F" >
+    <link rel="manifest" href="web/manifest.webmanifest">
+    <link rel="shortcut icon" href="web/favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#DC381F">
+
+    <!-- m  -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Dilli Babu R">
+    <meta name="description" content="A game that identifies relationship between two names for fun">
+    <meta name="theme-color" content="#daa520">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- gp -->
+    <meta itemprop="name" content="flames">
+    <meta itemprop="description" content="A game that identifies relationship between two names for fun">
+    <meta itemprop="image" content="icon.png">
+
+    <!-- t -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="flames">
+    <meta name="twitter:description" content="A game that identifies relationship between two names for fun">
+    <meta name="twitter:creator" content="@dillir07">
+    <meta name="twitter:image:src" content="icon.png">
+
+    <!-- og  -->
+    <meta property="og:title" content="flames" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://github.com/dillir07/flames" />
+    <meta property="og:site_name" content="flames" />
+    <meta property="og:image" content="web/ms-icon-310x310.png">
+    <meta property="og:description" content="A game that identifies relationship between two names for fun">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="web/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="web/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="web/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="web/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="web/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="web/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="web/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="web/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="web/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="web/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="web/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="web/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="web/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="web/ms-icon-144x144.png">
+    <!-- favicon -->
+    <script src="index.js"></script>
 </head>
 
 <body style="background: linear-gradient(180deg, #ffffff, #ffffff); background-repeat: no-repeat">
@@ -16,70 +64,85 @@
         <header class="w3-center w3-red w3-panel w3-xxlarge w3-round-large w3-card-2">
             <a href="javascript:location.reload(true)" class="w3-center"> {{message}} </a>
         </header>
-        <div v-if="inputMode" id="divInputForm" class="w3-container w3-center w3-padding w3-card-2 w3-round-large" style="background: linear-gradient(180deg, #E4E4E2, #FAD7BD);">
+        <div v-if="inputMode" id="divInputForm" class="w3-container w3-center w3-padding w3-card-2 w3-round-large"
+            style="background: linear-gradient(180deg, #E4E4E2, #FAD7BD);">
             <br>
-            <input type="text" id="txtYourName" v-model="yourName" required="required" class="w3-input w3-border w3-border-red w3-round-large"
-                placeholder="Your Name">
+            <input type="text" id="txtYourName" v-model="yourName" required="required"
+                class="w3-input w3-border w3-border-red w3-round-large" placeholder="Your Name">
             <br>
-            <input type="text" id="txtHisHerName" v-model="hisHerName" required="required" class="w3-input w3-border w3-border-red w3-round-large"
-                placeholder="His/Her Name">
+            <input type="text" id="txtHisHerName" v-model="hisHerName" required="required"
+                class="w3-input w3-border w3-border-red w3-round-large" placeholder="His/Her Name">
             <br>
             <input type="button" id="btnFlame" v-on:click="flame" role="button" value="🔥 Flames 🔥"
                 class="w3-btn w3-red w3-round-large">
         </div>
         <br>
         <div v-if="inputMode" class="w3-continer">
-            <div class="w3-container w3-card-2 w3-round-large" style="background: linear-gradient(180deg, #E4E4E2,  #E6C7C2);">
+            <div class="w3-container w3-card-2 w3-round-large"
+                style="background: linear-gradient(180deg, #E4E4E2,  #E6C7C2);">
                 <div class="w3-panel">Thanks to...</div>
                 <ul class="w3-list">
                     <li><a target="_blank" href="https://vuejs.org/">Vue JS team</a></li>
-                    <li><a target="_blank" href="https://mozilla.org">Mozilla 🦊</a> for <a target="_blank" href="https://developer.mozilla.org/en-US/">MDN Web Docs</a> </li>
-                    <li><a target="_blank" href="https://www.w3schools.com/w3css/">W3-CSS</a> from <a target="_blank" href="https://w3schools.com">w3schools</a></li>
+                    <li><a target="_blank" href="https://mozilla.org">Mozilla 🦊</a> for <a target="_blank"
+                            href="https://developer.mozilla.org/en-US/">MDN Web Docs</a> </li>
+                    <li><a target="_blank" href="https://www.w3schools.com/w3css/">W3-CSS</a> from <a target="_blank"
+                            href="https://w3schools.com">w3schools</a></li>
                     <li><a target="_blank" href="https://emojipedia.org/">Emojipedia</a></li>
                     <li>Wonderful Open Source community</li>
                 </ul>
             </div>
             <br>
             <div class="w3-bar w3-border w3-border-red w3-padding w3-card-2 w3-round-large">
-                    <span>About me...Name is <span>Dilli 😎,</span> you can find me at 👉</span>
-                    <a target="_blank" href="https://twitter.com/dillir07" class="w3-btn w3-round" style="background-color: #1da1f2; color: white; margin:5px">Twitter</a>
-                    <a target="_blank" href="https://github.com/dillir07" class="w3-btn w3-round" style="background-color: #24292e; color: white; margin:5px">Github</a>
-                    <a target="_blank" href="https://www.linkedin.com/in/dillir07/" class="w3-btn w3-round" style="background-color: #007bb5; color: white; margin:5px">LinkedIn</a>
-                    <a target="_blank" href="https://facebook.com/dillir07" class="w3-btn w3-round" style="background-color: #3b5998; color: white; margin:5px" >Facebook</a>
-                    <a target="_blank" href="https://dev.to/dillir07" class="w3-btn w3-round" style="background-color: #000000; color: white; margin:5px">DEV.TO</a>
+                <span>About me...Name is <span>Dilli 😎,</span> you can find me at 👉</span>
+                <a target="_blank" href="https://twitter.com/dillir07" class="w3-btn w3-round"
+                    style="background-color: #1da1f2; color: white; margin:5px">Twitter</a>
+                <a target="_blank" href="https://github.com/dillir07" class="w3-btn w3-round"
+                    style="background-color: #24292e; color: white; margin:5px">Github</a>
+                <a target="_blank" href="https://www.linkedin.com/in/dillir07/" class="w3-btn w3-round"
+                    style="background-color: #007bb5; color: white; margin:5px">LinkedIn</a>
+                <a target="_blank" href="https://facebook.com/dillir07" class="w3-btn w3-round"
+                    style="background-color: #3b5998; color: white; margin:5px">Facebook</a>
+                <a target="_blank" href="https://dev.to/dillir07" class="w3-btn w3-round"
+                    style="background-color: #000000; color: white; margin:5px">DEV.TO</a>
             </div>
         </div>
         <div v-if="outputMode">
             <div>
                 <div class="flex-container">
-                    <div class="flex-item w3-card-4 w3-padding-small w3-large w3-round-xlarge" v-for="letter in yourNameList" v-bind:class = 'letter.styles'>
+                    <div class="flex-item w3-card-4 w3-padding-small w3-large w3-round-xlarge"
+                        v-for="letter in yourNameList" v-bind:class='letter.styles'>
                         <span>{{letter.char}}</span>
                     </div>
                 </div>
                 <div class="flex-container">
-                    <div class="flex-item w3-card-4 w3-padding-small w3-large w3-round-xlarge" v-for="letter in hisHerNameList" v-bind:class = 'letter.styles'>
+                    <div class="flex-item w3-card-4 w3-padding-small w3-large w3-round-xlarge"
+                        v-for="letter in hisHerNameList" v-bind:class='letter.styles'>
                         <span>{{letter.char}}</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div v-if = "flamesCount">
+        <div v-if="flamesCount">
             <header class="w3-container w3-center w3-text-red">
                 <h1><strong>{{flameEmoji}} {{flamesCount}} {{flameEmoji}}</strong></h1>
             </header>
         </div>
-        <div v-if = "flamesModelList">
+        <div v-if="flamesModelList">
             <div class="flex-container">
-                <div class="flex-item w3-padding-small w3-card-4 w3-large w3-round-xlarge" v-for="flame in flamesModelList" v-bind:class='{dis:flame.disabled}'>
+                <div class="flex-item w3-padding-small w3-card-4 w3-large w3-round-xlarge"
+                    v-for="flame in flamesModelList" v-bind:class='{dis:flame.disabled}'>
                     <h2>{{flame.id}}</h2>
                 </div>
             </div>
 
-            <header v-if="flamesFinalResult" class="w3-center w3-large w3-card-4 w3-round-xlarge" style="background-color: #EBEBE3;" onclick="javascript:location.reload(true)">
+            <header v-if="flamesFinalResult" class="w3-center w3-large w3-card-4 w3-round-xlarge"
+                style="background-color: #EBEBE3;" onclick="javascript:location.reload(true)">
                 {{flamesFinalResult}}
-            <br>
-            <span class="w3-btn w3-round-large w3-medium w3-green" ><!-- Codes by Quackit.com -->
-                    <a href="javascript:location.reload(true)">Retry</a></span>
+                <br>
+                <span class="w3-btn w3-round-large w3-medium w3-green">
+                    <!-- Codes by Quackit.com -->
+                    <a href="javascript:location.reload(true)">Retry</a>
+                </span>
             </header>
         </div>
     </div>
