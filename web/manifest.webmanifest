@@ -1,7 +1,7 @@
 {
     "name": "flames",
     "short_name": "flames",
-    "start_url": ".",
+    "start_url": "../.",
     "display": "standalone",
     "background_color": "#ffffff",
     "description": "A game that identifies relationship between two names for fun",
